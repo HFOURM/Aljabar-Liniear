@@ -115,4 +115,39 @@ button {
   display: block;
 }
 
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .matrices {
+        flex-direction: column; /* Matriks A dan B vertikal */
+        gap: 20px;
+    }
+
+    .matrix {
+        width: 100%;
+    }
+
+    .matrix input {
+        width: 40px; /* Ukuran input lebih kecil di HP */
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .result-table td {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .button-container {
+        flex-direction: column; /* Tombol Hitung dan Hapus jadi vertikal */
+        gap: 10px;
+    }
+    
+    h1, h2, h3 {
+        font-size: 20px;
+    }
+}
 
