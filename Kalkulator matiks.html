@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Kalkulator Matriks</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Kalkulator Matriks</h1>
+            <div class="ordo-container">
+                <label class="ordo"><input type="radio" name="ordo" id="ordo_2"> Ordo 2x2</label>
+                <label class="ordo"><input type="radio" name="ordo" id="ordo_3"> Ordo 3x3</label>
+            </div>
+
+        
+                <div class="matrices">
+                    <div class="matrix" id="matrixA">
+                        <h2>Tabel A</h2>
+                        <table>
+                            <tr>
+                                <td><input type="text" id="a11" placeholder="a11"></td>
+                                <td><input type="text" id="a12" placeholder="a12"></td>
+                                <td><input type="text" id="a13" placeholder="a13"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" id="a21" placeholder="a21"></td>
+                                <td><input type="text" id="a22" placeholder="a22"></td>
+                                <td><input type="text" id="a23" placeholder="a23"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" id="a31" placeholder="a31"></td>
+                                <td><input type="text" id="a32" placeholder="a32"></td>
+                                <td><input type="text" id="a33" placeholder="a33"></td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                    <div class="matrix" id="matrixB">
+                        <h2>Tabel B</h2>
+                        <table>
+                            <tr>
+                                <td><input type="text" id="b11" placeholder="b11"></td>
+                                <td><input type="text" id="b12" placeholder="b12"></td>
+                                <td><input type="text" id="b13" placeholder="b13"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" id="b21" placeholder="b21"></td>
+                                <td><input type="text" id="b22" placeholder="b22"></td>
+                                <td><input type="text" id="b23" placeholder="b23"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" id="b31" placeholder="b31"></td>
+                                <td><input type="text" id="b32" placeholder="b32"></td>
+                                <td><input type="text" id="b33" placeholder="b33"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="matrix" id="resultContainer">
+                        <h2>Hasil</h2>
+                        <div class="tabelHasil" id="result"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="operations">
+            <h3>Pilih Operasi:</h3>
+            <label><input type="radio" name="operation" id="addition"> Penjumlahan</label>
+            <label><input type="radio" name="operation" id="subtraction"> Pengurangan</label>
+            <label><input type="radio" name="operation" id="multiplication"> Perkalian</label>
+            <label><input type="radio" name="operation" id="pangkat"> Pangkatkan</label>
+            <label><input type="radio" name="operation" id="determinant"> Determinan</label>
+            <label><input type="radio" name="operation" id="transpose"> Transpos</label>
+            <label><input type="radio" name="operation" id="invers"> Invers</label>
+            <label><input type="radio" name="operation" id="minor"> Minor</label>
+            <label><input type="radio" name="operation" id="cofactor"> Kovaktor</label>
+        </div>
+        
+        <div class="button-container">
+            <button id="calculate">Hitung</button>
+            <button id="clear">Hapus</button>
+        </div>    
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
