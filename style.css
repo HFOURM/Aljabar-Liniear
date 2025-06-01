@@ -31,11 +31,13 @@ h1, h2, h3 {
   border: 2px solid #9a8f8f;
 }
 
-
-
 .operations {
-  text-align: center;
-  margin: 20px 0;
+    display: grid;
+    grid-template-columns:  repeat(2, auto); /* Bagi jadi 2 kolom */
+    gap: 10px 50px; /* Jarak antar item */
+    max-width: 600px; /* Batas lebar grid */
+    margin: 20px auto; /* Tengah */
+    justify-content: center; /* Memusatkan grid ke tengah */
 }
 
 button {
@@ -102,6 +104,10 @@ button {
   background-color: #cdeffd;
 }
 
+#resultContainer {
+    margin-bottom: 30px; /* Tambahkan jarak bawah hasil */
+}
+  
 .matrix-options {
   margin-top: 10px;
   display: flex;
@@ -150,4 +156,3 @@ button {
         font-size: 20px;
     }
 }
-
