@@ -304,7 +304,7 @@ function updateMatrixInputs() {
 // Fungsi untuk memvalidasikan karakter yang di input
 function validateMatrixInput(event) {
     // Karakter yang diizinkan: angka 0-9, koma, titik, garis miring, dan backspace
-    const allowedChars = /[0-9.,\/]/;
+    const allowedChars = /[0-9.,\/.,-]/;
 
     const key = event.key;
     if (!allowedChars.test(key) && key !== 'Backspace' && key !== 'Delete') {
