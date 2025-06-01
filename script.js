@@ -312,11 +312,16 @@ function validateMatrixInput(event) {
     }
     // Batasi "-" hanya 1 kali dan hanya di awal
     if (key === '-') {
-        // Jika sudah ada "-" atau posisi cursor bukan di awal, tolak
         if (currentValue.includes('-') || input.selectionStart !== 0) {
             event.preventDefault();
             return;
         }
+    }
+    // Hitung panjang angka (abaikan -, /, ., ,)
+    const numericLength = currentValue.replace(/[^0-9]/g, '').length;
+    if (/[0-9]/.test(key) && numericLength >= 3) {
+        event.preventDefault(); // Blokir jika sudah 3 digit angka
+        return;
     }
 }
 // Fungsi untuk menyembunikan tabel
