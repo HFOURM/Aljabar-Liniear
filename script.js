@@ -114,7 +114,19 @@ window.addEventListener('DOMContentLoaded', updateMatrixInputs);
             }
         }
     }
-
+    
+    // Perkalian dengan skalar K
+    if (document.getElementById('scalarMultiplication').checked) {
+        operations.push('Perkalian Skalar');
+        const k = parseInputValue(prompt("Masukkan nilai skalar K:"));
+        for (let i = 0; i < size; i++) {
+            result[i] = [];
+            for (let j = 0; j < size; j++) {
+                result[i][j] = a[i][j] * k;
+            }
+        }
+    }
+    
     // Determinan
     if (document.getElementById('determinant').checked) {
         operations.push('Determinan');
@@ -329,7 +341,7 @@ function validateMatrixInput(event) {
 }
 // Fungsi untuk menyembunikan tabel
 function updateTableBVisibility() {
-    const operationsOnlyA = ['determinant', 'transpose', 'minor', 'cofactor'];
+    const operationsOnlyA = ['pangkat','determinant', 'transpose', 'minor', 'cofactor'];
     const matrixB = document.getElementById('matrixB');
 
     // Cek apakah salah satu operasi hanya membutuhkan tabel A dipilih
