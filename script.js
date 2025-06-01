@@ -341,7 +341,7 @@ function validateMatrixInput(event) {
 }
 // Fungsi untuk menyembunikan tabel
 function updateTableBVisibility() {
-    const operationsOnlyA = ['pangkat','determinant', 'transpose', 'minor', 'cofactor'];
+    const operationsOnlyA = ['scalarMultiplication','pangkat','determinant', 'transpose', 'minor', 'cofactor'];
     const matrixB = document.getElementById('matrixB');
 
     // Cek apakah salah satu operasi hanya membutuhkan tabel A dipilih
