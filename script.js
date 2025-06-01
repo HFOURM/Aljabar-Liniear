@@ -303,12 +303,20 @@ function updateMatrixInputs() {
 }
 // Fungsi untuk memvalidasikan karakter yang di input
 function validateMatrixInput(event) {
-    // Karakter yang diizinkan: angka 0-9, koma, titik, garis miring, dan backspace
-    const allowedChars = /[0-9.,\/.,-]/;
+    // Karakter yang diizinkan: angka 0-9, koma, titik, garis miring, minus, dan backspace
+    const allowedChars = /[0-9.,\/-]/;
 
     const key = event.key;
     if (!allowedChars.test(key) && key !== 'Backspace' && key !== 'Delete') {
         event.preventDefault(); // Mencegah input karakter yang tidak diperbolehkan
+    }
+    // Batasi "-" hanya 1 kali dan hanya di awal
+    if (key === '-') {
+        // Jika sudah ada "-" atau posisi cursor bukan di awal, tolak
+        if (currentValue.includes('-') || input.selectionStart !== 0) {
+            event.preventDefault();
+            return;
+        }
     }
 }
 // Fungsi untuk menyembunikan tabel
