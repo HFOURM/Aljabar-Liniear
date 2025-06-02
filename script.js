@@ -273,7 +273,7 @@ if (document.getElementById('obe').checked) {
     const r2 = parseInt(document.getElementById('row2').value) - 1;
 
     if (isNaN(r1) || isNaN(r2) || r1 < 0 || r2 < 0 || r1 >= size || r2 >= size) {
-        alert('Baris tidak valid.');
+        alert('Waduwh Baris tidak ada ee');
         return;
     }
 
@@ -292,7 +292,7 @@ if (document.getElementById('oke').checked) {
     const c2 = parseInt(document.getElementById('col2').value) - 1;
 
     if (isNaN(c1) || isNaN(c2) || c1 < 0 || c2 < 0 || c1 >= size || c2 >= size) {
-        alert('Kolom tidak valid.');
+        alert('Waduwh kolom tidak ada ee');
         return;
     }
 
