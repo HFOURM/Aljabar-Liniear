@@ -261,6 +261,46 @@ if (document.getElementById('minor').checked || document.getElementById('cofacto
     }
 }
 
+//OBE
+if (document.getElementById('obe').checked) {
+    const r1 = parseInt(document.getElementById('row1').value) - 1;
+    const r2 = parseInt(document.getElementById('row2').value) - 1;
+
+    if (isNaN(r1) || isNaN(r2) || r1 < 0 || r2 < 0 || r1 >= size || r2 >= size) {
+        alert('Baris tidak valid.');
+        return;
+    }
+
+    // Salin matriks A
+    for (let i = 0; i < size; i++) {
+        result[i] = [...a[i]];
+    }
+
+    // Tukar baris
+    [result[r1], result[r2]] = [result[r2], result[r1]];
+}
+
+// OKE
+if (document.getElementById('oke').checked) {
+    const c1 = parseInt(document.getElementById('col1').value) - 1;
+    const c2 = parseInt(document.getElementById('col2').value) - 1;
+
+    if (isNaN(c1) || isNaN(c2) || c1 < 0 || c2 < 0 || c1 >= size || c2 >= size) {
+        alert('Kolom tidak valid.');
+        return;
+    }
+
+    // Salin matriks A
+    for (let i = 0; i < size; i++) {
+        result[i] = [...a[i]];
+    }
+
+    // Tukar kolom
+    for (let i = 0; i < size; i++) {
+        [result[i][c1], result[i][c2]] = [result[i][c2], result[i][c1]];
+    }
+}
+    
 // Fungsi mengubah desimal menjadi pecahan
 function fraction(numerator, denominator) {
     // Untuk menemukan pembagi persekutuan terbesar
@@ -341,7 +381,7 @@ function validateMatrixInput(event) {
 }
 // Fungsi untuk menyembunikan tabel
 function updateTableBVisibility() {
-    const operationsOnlyA = ['scalarMultiplication','pangkat','determinant', 'transpose', 'minor', 'cofactor'];
+    const operationsOnlyA = ['scalarMultiplication','pangkat','determinant', 'transpose', 'minor', 'cofactor','obe','oke'];
     const matrixB = document.getElementById('matrixB');
 
     // Cek apakah salah satu operasi hanya membutuhkan tabel A dipilih
