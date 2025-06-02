@@ -40,6 +40,17 @@ h1, h2, h3 {
     justify-content: center; /* Memusatkan grid ke tengah */
 }
 
+.operations label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.operations input[type="number"] {
+    width: 50px;
+}
+
 button {
   display: block;
   margin: 20px auto;
