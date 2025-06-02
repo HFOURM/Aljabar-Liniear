@@ -35,6 +35,12 @@ document.getElementById('clear').addEventListener('click', function () {
     const operations = document.getElementsByName('operation');
     operations.forEach(op => op.checked = false);
     
+    // Kosongkan input OBE dan OKE
+    document.getElementById('row1').value = '';
+    document.getElementById('row2').value = '';
+    document.getElementById('col1').value = '';
+    document.getElementById('col2').value = '';
+    
     // Atur ulang tampilan input matrix ke 3x3 agar bisa mulai lagi dari awal
     updateMatrixInputs();
 });
