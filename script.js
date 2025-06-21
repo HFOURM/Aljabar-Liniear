@@ -63,7 +63,8 @@ window.addEventListener('DOMContentLoaded', updateMatrixInputs);
             }
         }
     }
-    return parseFloat(val);
+    const parsed = parseFloat(val);
+    return isNan(parsed) ? 0 : parsed;
 }
 
     // Ambil nilai dari Matrix A dan B berdasarkan ukuran ordo
