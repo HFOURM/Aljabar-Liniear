@@ -9,10 +9,6 @@ document.getElementById('calculate').addEventListener('click', function () {
         alert("Silakan pilih ordo 2x2 atau 3x3 terlebih dahulu.");
         return;
     }
-
-// Fungsi untuk mengatur visibilitas input sesuai ordo
-function updateMatrixInputs() {
-
 }
 
 // Tambahkan event listener ke radio button
@@ -45,14 +41,12 @@ document.getElementById('clear').addEventListener('click', function () {
     updateMatrixInputs();
 });
 
-// Jalankan saat halaman pertama kali dimuat
-window.addEventListener('DOMContentLoaded', updateMatrixInputs);
+// Fungsi parser yang bisa memproses input string menjadi angka
+function parseInputValue(val) {
+    if (typeof val !== "string") return 0;
+    val = val.trim().replace(",", ".");
+    if (val === "") return 0;
 
-    // Fungsi parser yang bisa memproses input string menjadi angka
-    function parseInputValue(val) {
-    val = val.replace(",", "."); // Ganti koma dengan titik
-    if (val.trim() === "") return 0;
-    
     if (val.includes("/")) {
         const parts = val.split("/");
         if (parts.length === 2) {
@@ -63,8 +57,9 @@ window.addEventListener('DOMContentLoaded', updateMatrixInputs);
             }
         }
     }
+
     const parsed = parseFloat(val);
-    return isNan(parsed) ? 0 : parsed;
+    return isNaN(parsed) ? 0 : parsed;
 }
 
     // Ambil nilai dari Matrix A dan B berdasarkan ukuran ordo
