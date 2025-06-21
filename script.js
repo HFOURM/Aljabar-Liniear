@@ -10,6 +10,8 @@ document.getElementById('calculate').addEventListener('click', function () {
         return;
     }
 }
+// Jalankan saat halaman pertama kali dimuat
+window.addEventListener('DOMContentLoaded', updateMatrixInputs);
 
 // Tambahkan event listener ke radio button
 document.getElementById('ordo_2').addEventListener('change', updateMatrixInputs);
