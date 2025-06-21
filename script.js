@@ -51,6 +51,8 @@ window.addEventListener('DOMContentLoaded', updateMatrixInputs);
     // Fungsi parser yang bisa memproses input string menjadi angka
     function parseInputValue(val) {
     val = val.replace(",", "."); // Ganti koma dengan titik
+    if (val.trim() === "") return 0;
+    
     if (val.includes("/")) {
         const parts = val.split("/");
         if (parts.length === 2) {
